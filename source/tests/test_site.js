@@ -109,9 +109,21 @@ function ok(c, m){ if(!c){ fails++; console.log('FAIL', m); } else console.log('
   await m.goto(base+'index.html'); const sw2 = await m.evaluate(()=>document.documentElement.scrollWidth); ok(sw2<=392, 'mobile map: no page-level horizontal scroll ('+sw2+')');
   await m.screenshot({path:'shots/map-mobile.png'});
 
-  // dark
+  // theme: light / dark only, the OS colour scheme is ignored
   const dctx = await b.newContext({ viewport:{width:1360,height:900}, colorScheme:'dark' });
-  const d = await dctx.newPage(); await d.goto(base+'roadmap.html?c=CC106'); await d.waitForSelector('#rows .row'); await d.locator('.row').nth(2).scrollIntoViewIfNeeded(); await d.screenshot({path:'shots/roadmap-dark.png'});
+  const d = await dctx.newPage(); d.on('pageerror', e=>errs.push(String(e))); d.on('console', x=>{ if(x.type()==='error') errs.push(x.text()); });
+  const theme = () => d.evaluate(()=>document.documentElement.getAttribute('data-theme'));
+  const bg = () => d.evaluate(()=>getComputedStyle(document.body).backgroundColor);
+  await d.goto(base+'index.html');
+  ok(await theme()==='light' && await bg()==='rgb(255, 255, 255)', 'theme: light by default even when the OS prefers dark');
+  ok(await d.locator('[data-theme-set]').count()===2, 'theme: only Light and Dark options');
+  await d.click('[data-theme-set="dark"]');
+  ok(await theme()==='dark' && await bg()==='rgb(18, 20, 24)' && await d.getAttribute('[data-theme-set="dark"]','aria-pressed')==='true', 'theme: Dark applies');
+  await d.goto(base+'roadmap.html?c=CC106'); await d.waitForSelector('#rows .row');
+  ok(await theme()==='dark', 'theme: Dark carries over to the roadmap page');
+  await d.locator('.row').nth(2).scrollIntoViewIfNeeded(); await d.screenshot({path:'shots/roadmap-dark.png'});
+  await d.click('[data-theme-set="light"]'); await d.reload(); await d.waitForSelector('#rows .row');
+  ok(await theme()==='light' && await bg()==='rgb(255, 255, 255)', 'theme: Light persists after reload');
 
   ok(errs.length===0, 'no console errors '+JSON.stringify(errs));
   await b.close();

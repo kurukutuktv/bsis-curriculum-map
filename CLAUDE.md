@@ -12,6 +12,7 @@ GitHub Pages serves the repo root from `main`. The build tooling is in `source/`
   and run `python3 source/build.py`.
 - Keep HTML, CSS and JS in separate files (`*.html`, `css/`, `js/`). No inline `<script>` or `<style>` blocks.
 - Progress is per-browser `localStorage`. There is no backend; do not add one.
+- Theming is Light and Dark only (`js/theme.js`, light by default). Do not add a system/auto mode or `prefers-color-scheme` rules.
 
 ## Test
 ```

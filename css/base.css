@@ -1,8 +1,11 @@
 /* ==========================================================
    base.css – design tokens, reset and the parts shared by
    the curriculum map (index.html) and the roadmaps (roadmap.html)
+   Two themes only: light (default) and dark (<html data-theme="dark">,
+   set by js/theme.js). The OS colour scheme is deliberately ignored.
    ========================================================== */
 :root{
+  color-scheme:light;
   --bg:#ffffff; --surface:#f6f7f9; --line:#e3e6eb; --text:#16181d; --muted:#5d6572;
   --accent:#2451c6; --accent-ink:#ffffff; --accent-soft:#e8eefc;
   --i-bg:#eef2fb; --i-ink:#3d5fb5; --e-bg:#c9d7f7; --e-ink:#1b3d92; --d-bg:#2451c6; --d-ink:#ffffff;
@@ -11,17 +14,8 @@
   --n-main:#ffe599; --n-sub:#fff8e1; --n-at:#e3eeff; --n-exam:#16181d; --n-exam-ink:#ffffff;
   --radius:8px;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121418; --surface:#1a1d23; --line:#2a2e36; --text:#eceef2; --muted:#9aa3b2;
-    --accent:#7aa2ff; --accent-ink:#0d1220; --accent-soft:#1d2740;
-    --i-bg:#1d2638; --i-ink:#9db8f5; --e-bg:#2c4278; --e-ink:#dbe6ff; --d-bg:#7aa2ff; --d-ink:#0d1220;
-    --ok:#56c98a; --ok-soft:#173326; --warn:#f0b35a; --warn-soft:#3a2a10;
-    --ink:#eceef2;
-    --n-main:#5a4a12; --n-sub:#2a2616; --n-at:#1d2a45; --n-exam:#eceef2; --n-exam-ink:#121418;
-  }
-}
 :root[data-theme="dark"]{
+  color-scheme:dark;
   --bg:#121418; --surface:#1a1d23; --line:#2a2e36; --text:#eceef2; --muted:#9aa3b2;
   --accent:#7aa2ff; --accent-ink:#0d1220; --accent-soft:#1d2740;
   --i-bg:#1d2638; --i-ink:#9db8f5; --e-bg:#2c4278; --e-ink:#dbe6ff; --d-bg:#7aa2ff; --d-ink:#0d1220;
@@ -39,7 +33,9 @@ a{color:var(--accent)}
 
 /* ---------- page header + top navigation ---------- */
 header.top{padding:22px 0 12px}
-.topnav{display:flex;gap:4px;margin:0 0 14px;font-size:14px}
+.topnav{display:flex;gap:4px;align-items:center;margin:0 0 14px;font-size:14px}
+.topnav .theme{margin-left:auto}
+.seg.theme button{height:30px;padding:0 10px}
 .topnav a{padding:5px 12px;border-radius:999px;text-decoration:none;color:var(--muted)}
 .topnav a:hover{color:var(--text);background:var(--surface)}
 .topnav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
