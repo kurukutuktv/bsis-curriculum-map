@@ -1,0 +1,100 @@
+/* ==========================================================
+   map.css – curriculum map page (index.html)
+   ========================================================== */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0}
+.bar .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1 1 320px;position:relative}
+.search input{width:100%;height:40px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--text);padding:0 38px 0 38px;font:inherit}
+.search input:focus{outline:2px solid var(--accent);outline-offset:0;background:var(--bg)}
+.search svg{position:absolute;left:11px;top:11px;width:18px;height:18px;color:var(--muted);pointer-events:none}
+input[type=search]::-webkit-search-cancel-button{display:none}
+.search .clear{position:absolute;right:6px;top:6px;width:28px;height:28px;border:0;background:transparent;border-radius:6px;cursor:pointer;color:var(--muted);display:none}
+.search .clear:hover{background:var(--line)}
+.seg-label{font-size:12px;color:var(--muted)}
+.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;min-height:24px;font-size:13px;color:var(--muted)}
+
+/* table */
+.tablewrap{margin:16px 0 8px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+table.map{border-collapse:separate;border-spacing:0;width:100%;min-width:1060px}
+.map th,.map td{padding:0 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.map thead th{background:var(--surface);font-size:12px;font-weight:600;color:var(--muted);height:44px;position:sticky;top:0;white-space:nowrap}
+.map tbody tr{cursor:pointer}
+.map tbody tr:last-child td{border-bottom:0}
+.map tbody tr:hover td{background:var(--surface)}
+.map tbody tr:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.map td{height:52px;font-size:14px}
+.map td.code{font-weight:600;white-space:nowrap;width:84px}
+.map td.code,.map thead th:first-child{position:sticky;left:0;z-index:2;background:var(--bg);box-shadow:1px 0 0 var(--line)}
+.map thead th:first-child{background:var(--surface);z-index:3}
+.map tbody tr:hover td.code{background:var(--surface)}
+.map td.title{min-width:240px}
+.map td.title .snip{display:block;font-size:12px;color:var(--muted);margin-top:1px;max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.map td.pre{white-space:nowrap;color:var(--muted);font-size:13px}
+.map td.u{text-align:center;width:48px;color:var(--muted)}
+.map th.p,.map td.p{text-align:center;padding:0 2px;width:48px}
+.map th.p button{border:0;background:transparent;cursor:pointer;font-size:12px;font-weight:600;color:var(--muted);width:100%;height:100%;padding:0}
+.map th.p button:hover{color:var(--text)}
+.map th.p button[aria-pressed="true"]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+.cell{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:26px;border-radius:5px;font-size:12px;font-weight:600;letter-spacing:.02em}
+.cell.I{background:var(--i-bg);color:var(--i-ink)}
+.cell.E{background:var(--e-bg);color:var(--e-ink)}
+.cell.D{background:var(--d-bg);color:var(--d-ink)}
+.cell.x{font-size:11px;min-width:40px}
+td.p.hl,th.p.hl{background:var(--accent-soft)}
+.map td.act{width:1%;white-space:nowrap;text-align:right;padding-right:10px}
+.map td.act .iconbtn{margin-left:4px}
+.iconbtn.rm{border-color:var(--accent);color:var(--accent)}
+.iconbtn.rm:hover{background:var(--accent-soft)}
+.iconbtn.rm .pct{font-size:11px;opacity:.85}
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}
+
+/* legend + notes */
+.legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);margin:6px 0 28px}
+.legend .cell{min-width:26px;height:22px;margin-right:4px}
+
+.pilolist{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pilo{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:start;padding:12px 14px;border-bottom:1px solid var(--line)}
+.pilo:last-child{border-bottom:0}
+.pilo .c{font-weight:600}
+.pilo .a{font-size:12px;color:var(--muted)}
+.pilo .t{margin:0}
+.pilo.flash{background:var(--accent-soft)}
+
+.notes{margin:32px 0 64px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.notes h3{font-size:13px;color:var(--text);margin:0 0 6px}
+.notes ul{margin:0 0 12px;padding-left:18px}
+.notes li{margin:3px 0}
+
+/* drawer content */
+.lo{display:grid;grid-template-columns:44px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+.lo:last-child{border-bottom:0}
+.lo .n{font-weight:600;font-size:13px;color:var(--muted);padding-top:1px}
+.lo p{margin:0}
+.lo .codes{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.codes .cell{min-width:auto;padding:0 7px;height:22px}
+.mini{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.mini th,.mini td{border:1px solid var(--line);text-align:center;padding:3px 0;width:9%}
+.mini th{background:var(--surface);color:var(--muted);font-weight:600}
+.mini th:first-child,.mini td:first-child{width:12%}
+.mini td.I{background:var(--i-bg);color:var(--i-ink);font-weight:600}
+.mini td.E{background:var(--e-bg);color:var(--e-ink);font-weight:600}
+.mini td.D{background:var(--d-bg);color:var(--d-ink);font-weight:600}
+.dp{display:grid;grid-template-columns:60px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+.dp:last-child{border-bottom:0}
+.dp .c{font-weight:600}
+.dp .a{font-size:12px;color:var(--muted)}
+.dp p{margin:0}
+.dp .l{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.dp .l .cell{min-width:auto;padding:0 7px;height:20px;font-size:11px}
+.rmbox{border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--radius);padding:12px 14px;margin-top:14px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.rmbox p{margin:0;font-size:14px}
+.rmbox.none{border-color:var(--line);background:var(--surface)}
+
+@media (max-width:640px){
+  .pilo{grid-template-columns:52px 1fr}
+  .pilo .iconbtn{grid-column:2;justify-self:start}
+  .lo{grid-template-columns:36px 1fr}
+  .lo .iconbtn{grid-column:2;justify-self:start}
+  .dp{grid-template-columns:52px 1fr}
+  .dp .iconbtn{grid-column:2;justify-self:start}
+}

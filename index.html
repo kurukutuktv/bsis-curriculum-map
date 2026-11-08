@@ -4,178 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BSIS Curriculum Map</title>
-<meta name="description" content="BSIS curriculum map from CMO No. 25, s. 2015: courses, learning outcomes and PILO mapping with copy buttons.">
+<meta name="description" content="BSIS curriculum map from CMO No. 25, s. 2015: courses, learning outcomes, PILO mapping with copy buttons, and an interactive roadmap for each course with an OBTL.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232451c6'/%3E%3Cpath d='M8 9h16M8 16h16M8 23h10' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-<style>
-:root{
-  --bg:#ffffff; --surface:#f6f7f9; --line:#e3e6eb; --text:#16181d; --muted:#5d6572;
-  --accent:#2451c6; --accent-ink:#ffffff; --accent-soft:#e8eefc;
-  --i-bg:#eef2fb; --i-ink:#3d5fb5; --e-bg:#c9d7f7; --e-ink:#1b3d92; --d-bg:#2451c6; --d-ink:#ffffff;
-  --ok:#1d7a46; --radius:8px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121418; --surface:#1a1d23; --line:#2a2e36; --text:#eceef2; --muted:#9aa3b2;
-    --accent:#7aa2ff; --accent-ink:#0d1220; --accent-soft:#1d2740;
-    --i-bg:#1d2638; --i-ink:#9db8f5; --e-bg:#2c4278; --e-ink:#dbe6ff; --d-bg:#7aa2ff; --d-ink:#0d1220;
-    --ok:#56c98a;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#121418; --surface:#1a1d23; --line:#2a2e36; --text:#eceef2; --muted:#9aa3b2;
-  --accent:#7aa2ff; --accent-ink:#0d1220; --accent-soft:#1d2740;
-  --i-bg:#1d2638; --i-ink:#9db8f5; --e-bg:#2c4278; --e-ink:#dbe6ff; --d-bg:#7aa2ff; --d-ink:#0d1220;
-  --ok:#56c98a;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-button{font:inherit;color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
-
-header.top{padding:28px 0 12px}
-.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
-h1{font-size:26px;line-height:1.2;margin:0 0 4px;font-weight:650}
-.sub{color:var(--muted);margin:0}
-
-.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0}
-.bar .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.search{flex:1 1 320px;position:relative}
-.search input{width:100%;height:40px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--text);padding:0 38px 0 38px;font:inherit}
-.search input:focus{outline:2px solid var(--accent);outline-offset:0;background:var(--bg)}
-.search svg{position:absolute;left:11px;top:11px;width:18px;height:18px;color:var(--muted);pointer-events:none}
-input[type=search]::-webkit-search-cancel-button{display:none}
-.search .clear{position:absolute;right:6px;top:6px;width:28px;height:28px;border:0;background:transparent;border-radius:6px;cursor:pointer;color:var(--muted);display:none}
-.search .clear:hover{background:var(--line)}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
-.seg button{border:0;background:transparent;padding:0 12px;height:38px;cursor:pointer;color:var(--muted);font-size:13px}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-.seg-label{font-size:12px;color:var(--muted)}
-.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;min-height:24px;font-size:13px;color:var(--muted)}
-.chip{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 6px 2px 10px;font-size:13px}
-.chip button{border:0;background:transparent;cursor:pointer;color:inherit;width:20px;height:20px;border-radius:50%;line-height:1}
-.chip button:hover{background:var(--line)}
-
-/* table */
-.tablewrap{margin:16px 0 8px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
-table.map{border-collapse:separate;border-spacing:0;width:100%;min-width:980px}
-.map th,.map td{padding:0 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
-.map thead th{background:var(--surface);font-size:12px;font-weight:600;color:var(--muted);height:44px;position:sticky;top:0;white-space:nowrap}
-.map tbody tr{cursor:pointer}
-.map tbody tr:last-child td{border-bottom:0}
-.map tbody tr:hover td{background:var(--surface)}
-.map tbody tr:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.map td{height:52px;font-size:14px}
-.map td.code{font-weight:600;white-space:nowrap;width:84px}
-.map td.code,.map thead th:first-child{position:sticky;left:0;z-index:2;background:var(--bg);box-shadow:1px 0 0 var(--line)}
-.map thead th:first-child{background:var(--surface);z-index:3}
-.map tbody tr:hover td.code{background:var(--surface)}
-.map td.title{min-width:240px}
-.map td.title .snip{display:block;font-size:12px;color:var(--muted);margin-top:1px;max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.map td.pre{white-space:nowrap;color:var(--muted);font-size:13px}
-.map td.u{text-align:center;width:48px;color:var(--muted)}
-.map th.p,.map td.p{text-align:center;padding:0 2px;width:48px}
-.map th.p button{border:0;background:transparent;cursor:pointer;font-size:12px;font-weight:600;color:var(--muted);width:100%;height:100%;padding:0}
-.map th.p button:hover{color:var(--text)}
-.map th.p button[aria-pressed="true"]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
-.cell{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:26px;border-radius:5px;font-size:12px;font-weight:600;letter-spacing:.02em}
-.cell.I{background:var(--i-bg);color:var(--i-ink)}
-.cell.E{background:var(--e-bg);color:var(--e-ink)}
-.cell.D{background:var(--d-bg);color:var(--d-ink)}
-.cell.x{font-size:11px;min-width:40px}
-td.p.hl,th.p.hl{background:var(--accent-soft)}
-.map td.act{width:1%;white-space:nowrap;text-align:right;padding-right:10px}
-.iconbtn{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid var(--line);background:var(--bg);border-radius:6px;cursor:pointer;font-size:13px;color:var(--text)}
-.iconbtn:hover{border-color:var(--accent);color:var(--accent)}
-.iconbtn svg{width:14px;height:14px}
-.iconbtn.done{border-color:var(--ok);color:var(--ok)}
-.empty{padding:40px 16px;text-align:center;color:var(--muted)}
-
-/* legend + notes */
-.legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);margin:6px 0 28px}
-.legend .cell{min-width:26px;height:22px;margin-right:4px}
-
-h2{font-size:18px;margin:32px 0 4px;font-weight:650}
-.hint{color:var(--muted);margin:0 0 12px;font-size:14px}
-.pilolist{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.pilo{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:start;padding:12px 14px;border-bottom:1px solid var(--line)}
-.pilo:last-child{border-bottom:0}
-.pilo .c{font-weight:600}
-.pilo .a{font-size:12px;color:var(--muted)}
-.pilo .t{margin:0}
-.pilo.flash{background:var(--accent-soft)}
-
-.notes{margin:32px 0 64px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-.notes h3{font-size:13px;color:var(--text);margin:0 0 6px}
-.notes ul{margin:0 0 12px;padding-left:18px}
-.notes li{margin:3px 0}
-
-/* drawer */
-.scrim{position:fixed;inset:0;background:rgba(10,12,18,.45);opacity:0;pointer-events:none;transition:opacity .15s;z-index:40}
-.scrim.on{opacity:1;pointer-events:auto}
-aside.drawer{position:fixed;top:0;right:0;height:100%;width:min(560px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:50;transform:translateX(100%);transition:transform .18s ease;display:flex;flex-direction:column}
-aside.drawer.on{transform:none}
-.drawer header{padding:18px 20px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
-.drawer header .h{flex:1}
-.drawer .code{font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin:0}
-.drawer h2.ct{font-size:20px;margin:2px 0 6px}
-.facts{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.facts b{color:var(--text);font-weight:600}
-.close{border:0;background:transparent;width:34px;height:34px;border-radius:6px;cursor:pointer;color:var(--muted);font-size:22px;line-height:1}
-.close:hover{background:var(--surface);color:var(--text)}
-.dbody{overflow:auto;padding:16px 20px 32px;flex:1}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:var(--radius);border:1px solid var(--line);background:var(--bg);cursor:pointer;font-size:14px}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.primary:hover{color:var(--accent-ink);opacity:.92}
-.btn.done{border-color:var(--ok);color:var(--ok);background:var(--bg)}
-.btn svg{width:15px;height:15px}
-.sec{margin-top:22px}
-.sec h3{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
-.lo{display:grid;grid-template-columns:44px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
-.lo:last-child{border-bottom:0}
-.lo .n{font-weight:600;font-size:13px;color:var(--muted);padding-top:1px}
-.lo p{margin:0}
-.lo .codes{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
-.codes .cell{min-width:auto;padding:0 7px;height:22px}
-.mini{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
-.mini th,.mini td{border:1px solid var(--line);text-align:center;padding:3px 0;width:9%}
-.mini th{background:var(--surface);color:var(--muted);font-weight:600}
-.mini th:first-child,.mini td:first-child{width:12%}
-.mini td.I{background:var(--i-bg);color:var(--i-ink);font-weight:600}
-.mini td.E{background:var(--e-bg);color:var(--e-ink);font-weight:600}
-.mini td.D{background:var(--d-bg);color:var(--d-ink);font-weight:600}
-.dp{display:grid;grid-template-columns:60px 1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
-.dp:last-child{border-bottom:0}
-.dp .c{font-weight:600}
-.dp .a{font-size:12px;color:var(--muted)}
-.dp p{margin:0}
-.dp .l{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
-.dp .l .cell{min-width:auto;padding:0 7px;height:20px;font-size:11px}
-.small{font-size:13px;color:var(--muted)}
-
-.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:all .18s;z-index:80;max-width:90vw}
-.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-@media (max-width:640px){
-  h1{font-size:22px}
-  .pilo{grid-template-columns:52px 1fr}
-  .pilo .iconbtn{grid-column:2;justify-self:start}
-  .lo{grid-template-columns:36px 1fr}
-  .lo .iconbtn{grid-column:2;justify-self:start}
-  .dp{grid-template-columns:52px 1fr}
-  .dp .iconbtn{grid-column:2;justify-self:start}
-}
-@media print{.bar,.scrim,aside.drawer,.act,.toast{display:none!important}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/map.css">
 </head>
 <body>
 
 <div class="wrap">
   <header class="top">
+    <nav class="topnav" aria-label="Sections">
+      <a href="index.html" aria-current="page">Curriculum map</a>
+      <a href="index.html#roadmaps" id="navRoadmaps">Roadmaps</a>
+    </nav>
     <p class="eyebrow">City College of Calapan · BSIS</p>
     <h1>BSIS Curriculum Map</h1>
     <p class="sub">CMO No. 25, s. 2015 · Section 10 Sample Curriculum Map for the Bachelor of Science in Information Systems</p>
@@ -187,9 +28,10 @@ aside.drawer.on{transform:none}
     <div class="row">
       <div class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Search courses, outcomes, PILO…  ( / )" autocomplete="off" aria-label="Search courses">
+        <input id="q" type="search" placeholder="Search courses, outcomes, PILO, roadmap topics…  ( / )" autocomplete="off" aria-label="Search courses">
         <button class="clear" id="clear" type="button" aria-label="Clear search">✕</button>
       </div>
+      <button class="btn" id="onlyRm" type="button" aria-pressed="false" title="Show only courses that have a roadmap">With roadmap</button>
       <span class="seg-label">PILO copy format</span>
       <div class="seg" role="group" aria-label="PILO copy format">
         <button type="button" id="fmtNum" aria-pressed="true" title="1. text">Numbered</button>
@@ -210,8 +52,12 @@ aside.drawer.on{transform:none}
   </div>
   <div class="legend">
     <span><span class="cell I">I</span><span class="cell E">E</span><span class="cell D">D</span></span>
-    <span>Codes are shown exactly as printed in the CMO map (the CMO does not spell out the letters). Click a course for its outcomes; click an IS column to filter.</span>
+    <span>Codes are shown exactly as printed in the CMO map (the CMO does not spell out the letters). Click a course for its outcomes; click an IS column to filter. The <b>Roadmap</b> button appears for courses whose OBTL has been added.</span>
   </div>
+
+  <h2 id="roadmaps">Course roadmaps</h2>
+  <p class="hint">Each roadmap is generated from the course's OBTL: weekly outcomes, topics, learning activities and assessments as an interactive flow. Your progress is saved in this browser only.</p>
+  <div class="rmcards" id="rmcards"></div>
 
   <h2 id="pilo-ref">Program Intended Learning Outcomes (PILO)</h2>
   <p class="hint">BSIS graduate outcomes IS01–IS10, CMO No. 25, s. 2015, Section 6.3 (B).</p>
@@ -221,12 +67,13 @@ aside.drawer.on{transform:none}
   <section class="notes">
     <h3>About this page</h3>
     <ul>
-      <li>All text and codes are transcribed from CMO No. 25, s. 2015 (Curriculum Map for BSIS, pp. 25–28; Graduate Outcomes, pp. 7–8). Wording is kept as printed, including the CMO's own typos; only spacing and punctuation spacing were tidied, and year-standing labels were written in one style (e.g. “4th Year Standing”).</li>
-      <li>The map lists 21 courses. The recommended ADV electives are not part of the CMO's BSIS map.</li>
+      <li>All text and codes in the map are transcribed from CMO No. 25, s. 2015 (Curriculum Map for BSIS, pp. 25–28; Graduate Outcomes, pp. 7–8). Wording is kept as printed, including the CMO's own typos; only spacing and punctuation spacing were tidied, and year-standing labels were written in one style (e.g. “4th Year Standing”).</li>
+      <li>The map lists 21 courses. The recommended ADV electives are not part of the CMO's BSIS map; an elective can still have a roadmap (it is labelled “elective”).</li>
       <li>Where the CMO prints one set of codes for a whole course, the course is shown with a single set. Where it prints codes per learning outcome, the course row shows every code its outcomes carry, and the course panel shows them per outcome.</li>
       <li>Typos in the CMO that are kept as printed: PILO IS08 (“techincal”, “neogitation”); IS103 LO2 (“Examine, test and evaluation web solutions”); CC104 LO1 (“a given specifications”); IS104 LO1 (“opportunites”).</li>
       <li>The last outcome column of the BSIS map is headed “IT10” in the CMO; it is the BSIS outcome IS10 (Life-Long Learning) and is labelled IS10 here.</li>
       <li>The Practicum is coded “PRAC01” in the CMO map. Elsewhere in the same CMO it appears as “PRAC101” (curriculum chart, p. 20) and “PRAC104” (course list, p. 17).</li>
+      <li>Roadmaps come from each course's OBTL and are separate from the CMO map data. Search also looks at roadmap topics, and says so when that is why a course matched.</li>
     </ul>
   </section>
 </main>
@@ -245,286 +92,9 @@ aside.drawer.on{transform:none}
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script id="data" type="application/json">{"pilo": [{"code": "IS01", "attr": "Knowledge for Solving Computing Problems", "text": "Apply knowledge of business processes, computing, mathematics and social sciences appropriate to Information Systems"}, {"code": "IS02", "attr": "Problem Analysis", "text": "Analyze a problem, identify and define the computing requirements with respect to organizational factors appropriate to its solution and plan strategies for their solution"}, {"code": "IS03", "attr": "Problem Analysis", "text": "Evaluate information systems in terms of general quality attributes and possible trade-offs presented within the given requirement"}, {"code": "IS04", "attr": "Design/Development of Solutions", "text": "Design, implement, and evaluate information systems, processes, components, or programs and to source cost-benefit efficient alternatives to meet desired needs, goals and constraints"}, {"code": "IS05", "attr": "Design/Development of Solutions", "text": "Use knowledge and understanding of enterprises in modelling and design of information systems"}, {"code": "IS06", "attr": "Modern Tool Usage", "text": "Deploy and use effectively skills, tools and techniques necessary for information systems practice"}, {"code": "IS07", "attr": "Individual and Team Work", "text": "Function effectively on teams (recognizing the different roles within a team and different ways of organizing teams) to accomplish a common goal"}, {"code": "IS08", "attr": "Communication", "text": "Communicate effectively with a range of audiences. Communication skills includes techincal writing, presentation and neogitation, and numeracy."}, {"code": "IS09", "attr": "Computing Professionalism and Ethics in the Society", "text": "Recognize the legal, social, ethical and professional issues involved in the exploitation of computer technology and be guided by the adoption of appropriate professional, ethical and legal practices both in the local and global community"}, {"code": "IS10", "attr": "Life-Long Learning", "text": "Recognize the need for and engage in an independent and life-long learning, planning self-learning and improving performance as the foundation for on-going professional development"}], "courses": [{"code": "CC101", "title": "Introduction to Computing", "pre": "None", "units": 3, "los": ["Explain fundamental principles, concepts and evolution of computing systems as they relate to different fields", "Expound on the recent developments in the different computing knowledge areas", "Analyze solutions employed by organizations to address different computing issues"], "mode": "course", "codes": ["I", "", "", "", "", "I", "", "", "I", "I"], "page": "25"}, {"code": "CC102", "title": "Computer Programming 1", "pre": "None", "units": 3, "los": ["Design, implement, test, and debug a program, based on a given specification, that uses each of the following fundamental programming components: (1) primitive data types, (2) basic computation, (3) simple I/O, (4) conditional and iterative structures, (5) definition of functions and parameter passing, and (6) recursion", "Analyze and simulate results of algorithms that may be implemented as a solution to a given problem"], "mode": "course", "codes": ["I", "I", "I", "I", "I", "", "", "", "", ""], "page": "26"}, {"code": "CC103", "title": "Computer Programming 2", "pre": "CC102", "units": 3, "los": ["Design, implement, test, and debug a program, based on a given specification, that uses: (1) data structures arrays, stacks, queues, trees, strings, structures, linked list, and files, (2) conditional, iterative, and recursive constructs, and (3) standard libraries in the assigned programming language"], "mode": "course", "codes": ["I", "I", "I", "I", "I", "", "", "", "", ""], "page": "26"}, {"code": "CC104", "title": "Data Structures and Algorithms Analysis", "pre": "CC103", "units": 3, "los": ["Design, implement, test and debug a program based on a given specifications that uses and implement abstract data types (stacks, queues, priority queues, sets, maps)", "Argue strengths and weaknesses among multiple implementations for a problem (e.g. on the aspects of iterative or recursive solutions and on the aspects of abstraction, encapsulation and information hiding)"], "mode": "lo", "codes": [["E", "E", "", "E", "", "", "", "", "", ""], ["E", "E", "", "E", "", "", "", "", "", ""]], "page": "26"}, {"code": "CC105", "title": "Information Management", "pre": "CC104", "units": 3, "los": ["Integrate business intelligence functions in the development of database systems in enterprises"], "mode": "course", "codes": ["E", "E", "E", "I", "I", "E", "", "", "", ""], "page": "26"}, {"code": "CC106", "title": "Application Development and Emerging Technologies", "pre": "4th Year Standing", "units": 3, "los": ["Develop specifications for a software development effort that precisely articulates the functional requirements, expected execution paths, and the explicit use of cutting edge or emerging technologies, which includes hardware devices and software library APIs.", "Select and use a defined coding, documentation writing, and licensing standards in a sufficiently complex software project where coding idioms and mechanisms for implementing designs to achieve desired properties such as reliability, efficiency, and robustness are practiced with respect to legal and ethical considerations", "Undertake, as part of a team activity an inspection of the source code and unit testing of the functional units of a sufficiently complex software project"], "mode": "course", "codes": ["E", "E", "E", "D", "D", "D", "", "", "", ""], "page": "26"}, {"code": "IS101", "title": "Fundamentals of IS", "pre": "CC101", "units": 3, "los": ["Compare and identify the major technologies and applications of information systems in driving development and changes in enterprises"], "mode": "course", "codes": ["I", "I", "I", "I", "I", "I", "", "", "", ""], "page": "26"}, {"code": "IS102", "title": "Professional Issues in IS", "pre": "CC101", "units": 3, "los": ["Examine professional, ethical and moral challenges in computing and use of information systems and recommend courses of action.", "Apply/exhibit ethical thinking skills in analyzing and finding resolutions to computing issues"], "mode": "course", "codes": ["", "", "", "", "", "", "", "E", "D", "E"], "page": "26"}, {"code": "IS103", "title": "IT Infrastructure and Network Technologies", "pre": "CC101", "units": 3, "los": ["Evaluate how IT infrastructure components are organized into infrastructure solutions in different organizational environments", "Examine, test and evaluation web solutions as applied to business enterprise"], "mode": "course", "codes": ["D", "E", "E", "E", "D", "", "", "", "", ""], "page": "26-27"}, {"code": "IS104", "title": "Systems Analysis and Design", "pre": "2nd Year Standing", "units": 3, "los": ["Use systems thinking to analyze business processes and identify problems and opportunites that can be solved and supported by technology solutions", "Apply appropriate tools, methods, models/techniques in systems analysis and design", "Develop and defend a project design proposal to different audiences."], "mode": "lo", "codes": [["D", "D", "", "", "", "E", "", "", "", ""], ["E", "E", "E", "E", "D", "D", "E", "", "", ""], ["", "", "D", "D", "E", "D", "E", "", "", ""]], "page": "27"}, {"code": "IS105", "title": "Enterprise Architecture", "pre": "IS103", "units": 3, "los": ["Examine and evaluate core concepts of data/information architecture used in existing data/information architecture designs"], "mode": "course", "codes": ["", "E", "D", "", "D", "D", "", "", "", ""], "page": "27"}, {"code": "IS106", "title": "IS Project Management 1", "pre": "IS104", "units": 3, "los": ["Examine the use of project management best practices in real-life projects", "Apply project management concepts, principles and tools in performing an actual IS project."], "mode": "course", "codes": ["E", "E", "E", "E", "E", "E", "D", "", "", "E"], "page": "27"}, {"code": "IS107", "title": "IS Strategy Management and Acquisition", "pre": "4th Year Standing", "units": 3, "los": ["Examine existing and emerging information technologies, the functions of IS and how it impacts organizational operations", "Analyze how strategic decisions are made concerning acquiring IS resources and capabilities including the ability to evaluate the different sourcing options"], "mode": "lo", "codes": [["", "", "", "D", "D", "D", "", "", "", ""], ["", "D", "D", "E", "E", "", "", "", "", ""]], "page": "27"}, {"code": "DM101", "title": "Organization and Management Concepts", "pre": "CC101", "units": 3, "los": ["Examine and Evaluate organizational structure policies and procedures and the information systems that support them", "Examine and Evaluate management lifecycle and the information systems that support them"], "mode": "lo", "codes": [["I", "E", "E", "", "", "", "", "E", "E", "D"], ["I", "E", "E", "", "", "", "", "E", "E", "D"]], "page": "27"}, {"code": "DM102", "title": "Financial Management", "pre": "DM101", "units": 3, "los": ["Examine and Evaluate financial processes and reports and the information systems that support them"], "mode": "course", "codes": ["E", "E", "E", "E", "E", "", "E", "", "", ""], "page": "27"}, {"code": "DM103", "title": "Business Process Management", "pre": "DM102", "units": 3, "los": ["Use systems thinking in modeling and analyzing business processes", "Rethink processes to simplify business operations"], "mode": "lo", "codes": [["", "E", "E", "D", "D", "E", "", "", "", ""], ["", "E", "E", "D", "D", "E", "", "", "", ""]], "page": "27"}, {"code": "DM104", "title": "Evaluation of Business Performance", "pre": "DM103", "units": 3, "los": ["Evaluate business performance applying the different evaluation tools consistent with quality management and continuous improvement", "Develop quality metrics for assessment of customer satisfaction in all phases of life cycle.", "Design a business performance management program for SMEs"], "mode": "lo", "codes": [["", "D", "D", "", "", "D", "", "", "", ""], ["", "D", "D", "", "", "D", "", "", "", ""], ["", "", "", "D", "D", "", "E", "E", "E", ""]], "page": "27"}, {"code": "QUAMET", "title": "Quantitative Methods", "pre": "3rd Year Standing", "units": 3, "los": ["Use appropriate mathematical tools for decision making.", "Implement mathematical methods in IT solutions to problems."], "mode": "lo", "codes": [["", "D", "D", "", "", "D", "", "", "", ""], ["", "D", "D", "", "", "D", "", "", "", ""]], "page": "27"}, {"code": "CAP101", "title": "Capstone Project 1", "pre": "4th Year Standing", "units": 3, "los": [], "mode": "course", "codes": ["D", "D", "D", "D", "D", "D", "D", "D", "D", "D"], "page": "28"}, {"code": "CAP102", "title": "Capstone Project 2", "pre": "4th Year Standing", "units": 3, "los": [], "mode": "course", "codes": ["D", "D", "D", "D", "D", "D", "D", "D", "D", "D"], "page": "28"}, {"code": "PRAC01", "title": "Practicum", "pre": "4th Year Standing", "units": 3, "los": ["Analyze, design, implement, test, maintain, and/or document a software system as applied to a real-world problem, as part of a team in an actual company environment, thereby also developing personal and interpersonal working skills in the process"], "mode": "course", "codes": ["D", "D", "D", "D", "D", "D", "D", "D", "D", "D"], "page": "28"}]}</script>
-<script>
-(function(){
-"use strict";
-var DATA = JSON.parse(document.getElementById('data').textContent);
-var PILO = DATA.pilo, COURSES = DATA.courses;
-var ORDER = {I:1,E:2,D:3};
-var fmt = 'num';             // 'num' | 'code'
-try{ var saved = localStorage.getItem('bsis-fmt'); if(saved==='code'||saved==='num') fmt=saved; }catch(e){}
-
-var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
-var ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
-
-function $(id){return document.getElementById(id)}
-function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-
-/* ---------- derived data ---------- */
-COURSES.forEach(function(c){
-  var rows = c.mode==='course' ? [c.codes] : c.codes;
-  c.union = [];                       // per PILO column: sorted unique codes across the course
-  for(var i=0;i<10;i++){
-    var set = {};
-    rows.forEach(function(r){ if(r[i]) set[r[i]]=1; });
-    c.union.push(Object.keys(set).sort(function(a,b){return ORDER[a]-ORDER[b]}));
-  }
-  c.piloIdx = [];
-  c.union.forEach(function(u,i){ if(u.length) c.piloIdx.push(i); });
-  c.hay = [c.code, c.title, c.pre, String(c.units)]
-    .concat(c.los)
-    .concat(c.piloIdx.map(function(i){return PILO[i].code+' '+PILO[i].attr+' '+PILO[i].text}))
-    .join(' \n ').toLowerCase();
-});
-
-/* ---------- copy helpers ---------- */
-var toastTimer;
-function toast(msg){
-  var t=$('toast'); t.textContent=msg; t.classList.add('on');
-  clearTimeout(toastTimer); toastTimer=setTimeout(function(){t.classList.remove('on')},1600);
-}
-function writeClipboard(text){
-  if(navigator.clipboard && window.isSecureContext){
-    return navigator.clipboard.writeText(text);
-  }
-  return new Promise(function(res,rej){
-    var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly','');
-    ta.style.position='fixed'; ta.style.top='-1000px'; document.body.appendChild(ta); ta.select();
-    try{ document.execCommand('copy') ? res() : rej(new Error('copy failed')); }catch(e){ rej(e); }
-    document.body.removeChild(ta);
-  });
-}
-function copy(text, btn, label){
-  writeClipboard(text).then(function(){
-    toast((label||'Copied')+' copied');
-    if(btn){
-      var orig=btn.innerHTML; btn.classList.add('done');
-      btn.innerHTML = ICON_OK + '<span>Copied</span>';
-      setTimeout(function(){ btn.classList.remove('done'); btn.innerHTML=orig; },1400);
-    }
-  }).catch(function(){ toast('Copy failed – select the text and copy manually'); });
-}
-function piloLines(idxs){
-  return idxs.map(function(i,n){
-    var p=PILO[i];
-    return fmt==='code' ? (p.code+' – '+p.text) : ((n+1)+'. '+p.text);
-  }).join('\n');
-}
-function courseText(c){
-  var out = [c.code+' – '+c.title, 'Units: '+c.units, 'Pre-requisite: '+c.pre];
-  if(c.los.length){ out.push('', 'Course Learning Outcomes:'); c.los.forEach(function(t,i){ out.push('LO'+(i+1)+'. '+t); }); }
-  return out.join('\n');
-}
-function losText(c){ return c.los.map(function(t,i){return 'LO'+(i+1)+'. '+t}).join('\n'); }
-
-/* ---------- state ---------- */
-var query='', activePilo=-1;
-
-function tokens(){ return query.toLowerCase().split(/\s+/).filter(Boolean); }
-function matches(c){
-  if(activePilo>=0 && !c.union[activePilo].length) return false;
-  var t=tokens();
-  for(var i=0;i<t.length;i++){ if(c.hay.indexOf(t[i])<0) return false; }
-  return true;
-}
-function snippet(c){
-  var t=tokens(); if(!t.length) return '';
-  var head=(c.code+' '+c.title+' '+c.pre).toLowerCase();
-  if(t.every(function(x){return head.indexOf(x)>=0})) return '';
-  for(var i=0;i<c.los.length;i++){
-    var lo=c.los[i].toLowerCase();
-    if(t.some(function(x){return lo.indexOf(x)>=0})) return 'LO'+(i+1)+': '+c.los[i];
-  }
-  for(var j=0;j<c.piloIdx.length;j++){
-    var p=PILO[c.piloIdx[j]], ph=(p.code+' '+p.attr+' '+p.text).toLowerCase();
-    if(t.some(function(x){return ph.indexOf(x)>=0})) return p.code+': '+p.text;
-  }
-  return '';
-}
-
-/* ---------- render table ---------- */
-function renderHead(){
-  var h='<tr><th scope="col">Code</th><th scope="col">Course</th><th scope="col">Pre-requisite</th><th scope="col" style="text-align:center">Units</th>';
-  PILO.forEach(function(p,i){
-    h+='<th class="p'+(i===activePilo?' hl':'')+'" scope="col"><button type="button" data-p="'+i+'" aria-pressed="'+(i===activePilo)+'" title="'+esc(p.code+' – '+p.text)+'">'+p.code+'</button></th>';
-  });
-  h+='<th scope="col"></th></tr>';
-  $('thead').innerHTML=h;
-}
-function cellHTML(u){
-  if(!u.length) return '';
-  var top=u[u.length-1];
-  return '<span class="cell '+top+(u.length>1?' x':'')+'">'+u.join('/')+'</span>';
-}
-function renderRows(){
-  var list=COURSES.filter(matches), h='';
-  list.forEach(function(c){
-    var sn=snippet(c);
-    h+='<tr tabindex="0" data-code="'+c.code+'" aria-label="'+esc(c.code+' '+c.title)+'">'
-      +'<td class="code">'+esc(c.code)+'</td>'
-      +'<td class="title">'+esc(c.title)+(sn?'<span class="snip">'+esc(sn)+'</span>':'')+'</td>'
-      +'<td class="pre">'+esc(c.pre)+'</td>'
-      +'<td class="u">'+c.units+'</td>';
-    for(var i=0;i<10;i++) h+='<td class="p'+(i===activePilo?' hl':'')+'">'+cellHTML(c.union[i])+'</td>';
-    h+='<td class="act"><button class="iconbtn" type="button" data-copy="pilo" data-code="'+c.code+'" title="Copy the PILO of '+esc(c.code)+'">'+ICON_COPY+'<span>PILO</span></button></td></tr>';
-  });
-  $('tbody').innerHTML=h;
-  $('empty').hidden = list.length>0;
-  $('map').style.display = list.length? '' : 'none';
-  var m='<span>'+list.length+' of '+COURSES.length+' courses</span>';
-  if(activePilo>=0){
-    m+='<span class="chip">Mapped to '+PILO[activePilo].code+' <button type="button" id="unfilter" aria-label="Remove filter '+PILO[activePilo].code+'">✕</button></span>';
-  }
-  $('meta').innerHTML=m;
-  var u=$('unfilter'); if(u) u.onclick=function(){activePilo=-1; renderAll();};
-}
-function renderAll(){ renderHead(); renderRows(); }
-
-/* ---------- PILO reference ---------- */
-function renderPiloRef(){
-  var h='';
-  PILO.forEach(function(p,i){
-    h+='<div class="pilo" id="pilo-'+p.code+'"><div><div class="c">'+p.code+'</div></div>'
-      +'<div><div class="a">'+esc(p.attr)+'</div><p class="t">'+esc(p.text)+'</p></div>'
-      +'<button class="iconbtn" type="button" data-copy="piloOne" data-i="'+i+'">'+ICON_COPY+'<span>Copy</span></button></div>';
-  });
-  $('pilolist').innerHTML=h;
-  $('copyAllPilo').innerHTML=ICON_COPY+'<span>Copy all 10 PILO</span>';
-}
-
-/* ---------- drawer ---------- */
-var lastFocus=null, openCode=null;
-function openDrawer(code, push){
-  var c=COURSES.filter(function(x){return x.code===code})[0]; if(!c) return;
-  openCode=code; lastFocus=document.activeElement;
-  $('dCode').textContent=c.code;
-  $('dTitle').textContent=c.title;
-  $('dFacts').innerHTML='<span><b>'+c.units+'</b> units</span><span>Pre-requisite: <b>'+esc(c.pre)+'</b></span><span class="small">CMO p. '+c.page+'</span>';
-  var b='<div class="actions">'
-    +'<button class="btn primary" type="button" data-copy="piloD">'+ICON_COPY+'<span>Copy PILO</span></button>'
-    +'<button class="btn" type="button" data-copy="courseD">'+ICON_COPY+'<span>Copy course</span></button>'
-    +(c.los.length?'<button class="btn" type="button" data-copy="losD">'+ICON_COPY+'<span>Copy outcomes</span></button>':'')
-    +'</div><p class="small" style="margin:6px 0 0">“Copy course” = code, title, units, pre-requisite and learning outcomes.</p>';
-
-  b+='<div class="sec"><h3><span>Course learning outcomes</span></h3>';
-  if(!c.los.length){
-    b+='<p class="small">The CMO map lists no learning outcomes for this course.</p>';
-  } else {
-    c.los.forEach(function(t,i){
-      b+='<div class="lo"><div class="n">LO'+(i+1)+'</div><div><p>'+esc(t)+'</p>';
-      if(c.mode==='lo'){
-        b+='<div class="codes">'+codesChips(c.codes[i])+'</div>';
-      }
-      b+='</div><button class="iconbtn" type="button" data-copy="loOne" data-i="'+i+'" title="Copy LO'+(i+1)+'">'+ICON_COPY+'<span>Copy</span></button></div>';
-    });
-  }
-  b+='</div>';
-
-  b+='<div class="sec"><h3><span>PILO map</span></h3>'+miniTable(c)+'</div>';
-
-  b+='<div class="sec"><h3><span>Mapped PILO ('+c.piloIdx.length+')</span></h3>';
-  c.piloIdx.forEach(function(i){
-    var p=PILO[i];
-    b+='<div class="dp"><div class="c">'+p.code+'</div><div><div class="a">'+esc(p.attr)+'</div><p>'+esc(p.text)+'</p>'
-      +'<div class="l">'+c.union[i].map(function(l){return '<span class="cell '+l+'">'+l+'</span>'}).join('')+'</div></div>'
-      +'<button class="iconbtn" type="button" data-copy="piloOne" data-i="'+i+'">'+ICON_COPY+'<span>Copy</span></button></div>';
-  });
-  b+='</div>';
-  if(c.mode==='course' && c.los.length>1){
-    b+='<p class="small" style="margin-top:18px">The CMO prints one set of codes for all learning outcomes of this course.</p>';
-  }
-  $('dBody').innerHTML=b;
-  $('dBody').scrollTop=0;
-  $('scrim').classList.add('on'); $('drawer').classList.add('on'); $('drawer').setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  if(push!==false){ try{ history.replaceState(null,'','#'+code); }catch(e){ location.hash=code; } }
-  setTimeout(function(){ $('dClose').focus(); },30);
-}
-function codesChips(r){
-  var h='';
-  r.forEach(function(l,i){ if(l) h+='<span class="cell '+l+'" title="'+esc(PILO[i].text)+'">'+PILO[i].code+' · '+l+'</span>'; });
-  return h || '<span class="small">No code printed</span>';
-}
-function miniTable(c){
-  var h='<table class="mini"><thead><tr><th></th>'+PILO.map(function(p){return '<th>'+p.code.replace('IS','')+'</th>'}).join('')+'</tr></thead><tbody>';
-  if(c.mode==='course'){
-    h+='<tr><td>'+(c.los.length>1?'All LOs':(c.los.length?'LO1':'Course'))+'</td>'+c.codes.map(function(l){return '<td class="'+l+'">'+l+'</td>'}).join('')+'</tr>';
-  } else {
-    c.codes.forEach(function(r,i){ h+='<tr><td>LO'+(i+1)+'</td>'+r.map(function(l){return '<td class="'+l+'">'+l+'</td>'}).join('')+'</tr>'; });
-  }
-  h+='</tbody></table><p class="small" style="margin:6px 0 0">Columns 01–10 = IS01–IS10.</p>';
-  return h;
-}
-function closeDrawer(){
-  if(!$('drawer').classList.contains('on')) return;
-  $('scrim').classList.remove('on'); $('drawer').classList.remove('on'); $('drawer').setAttribute('aria-hidden','true');
-  document.body.style.overflow=''; openCode=null;
-  try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
-  if(lastFocus && lastFocus.focus) lastFocus.focus();
-}
-
-/* ---------- events ---------- */
-function byCode(code){ return COURSES.filter(function(x){return x.code===code})[0]; }
-
-document.addEventListener('click',function(ev){
-  var t=ev.target;
-  var cp=t.closest('[data-copy]');
-  if(cp){
-    ev.stopPropagation();
-    var kind=cp.getAttribute('data-copy'), c, i;
-    if(kind==='pilo'){ c=byCode(cp.getAttribute('data-code')); copy(piloLines(c.piloIdx), cp, 'PILO of '+c.code); }
-    else if(kind==='piloD'){ c=byCode(openCode); copy(piloLines(c.piloIdx), cp, 'PILO of '+c.code); }
-    else if(kind==='courseD'){ c=byCode(openCode); copy(courseText(c), cp, c.code+' details'); }
-    else if(kind==='losD'){ c=byCode(openCode); copy(losText(c), cp, 'Outcomes'); }
-    else if(kind==='loOne'){ c=byCode(openCode); i=+cp.getAttribute('data-i'); copy('LO'+(i+1)+'. '+c.los[i], cp, 'LO'+(i+1)); }
-    else if(kind==='piloOne'){ i=+cp.getAttribute('data-i'); copy(fmt==='code'? PILO[i].code+' – '+PILO[i].text : PILO[i].text, cp, PILO[i].code); }
-    return;
-  }
-  var ph=t.closest('th.p button');
-  if(ph){ var i2=+ph.getAttribute('data-p'); activePilo = (activePilo===i2)? -1 : i2; renderAll(); return; }
-  var tr=t.closest('#tbody tr');
-  if(tr){ openDrawer(tr.getAttribute('data-code')); return; }
-  if(t===$('scrim')||t.closest('#dClose')) closeDrawer();
-});
-$('copyAllPilo').addEventListener('click',function(){
-  var all=PILO.map(function(_,i){return i});
-  copy(piloLines(all), this, 'All PILO');
-});
-$('tbody').addEventListener('keydown',function(ev){
-  if((ev.key==='Enter'||ev.key===' ') && ev.target.matches('tr')){ ev.preventDefault(); openDrawer(ev.target.getAttribute('data-code')); }
-});
-document.addEventListener('keydown',function(ev){
-  if(ev.key==='Escape') closeDrawer();
-  if(ev.key==='/' && !/INPUT|TEXTAREA/.test(document.activeElement.tagName) && !$('drawer').classList.contains('on')){ ev.preventDefault(); $('q').focus(); $('q').select(); }
-  if(ev.key==='Tab' && $('drawer').classList.contains('on')){   // keep focus inside the panel
-    var f=$('drawer').querySelectorAll('button'); if(!f.length) return;
-    var first=f[0], last=f[f.length-1];
-    if(ev.shiftKey && document.activeElement===first){ ev.preventDefault(); last.focus(); }
-    else if(!ev.shiftKey && document.activeElement===last){ ev.preventDefault(); first.focus(); }
-  }
-});
-$('q').addEventListener('input',function(){
-  query=this.value; $('clear').style.display=query?'block':'none'; renderRows();
-});
-$('clear').addEventListener('click',function(){ $('q').value=''; query=''; this.style.display='none'; renderRows(); $('q').focus(); });
-function setFmt(f){
-  fmt=f; $('fmtNum').setAttribute('aria-pressed',f==='num'); $('fmtCode').setAttribute('aria-pressed',f==='code');
-  try{ localStorage.setItem('bsis-fmt',f); }catch(e){}
-}
-$('fmtNum').onclick=function(){setFmt('num')}; $('fmtCode').onclick=function(){setFmt('code')};
-window.addEventListener('hashchange',function(){
-  var h=location.hash.replace('#','');
-  if(h && byCode(h)) openDrawer(h,false); else if(!h) closeDrawer();
-});
-
-/* ---------- init ---------- */
-setFmt(fmt);
-renderPiloRef();
-renderAll();
-var h0=location.hash.replace('#','');
-if(h0 && byCode(h0)) openDrawer(h0,false);
-})();
-</script>
+<script src="js/data.js"></script>
+<script src="js/roadmaps/manifest.js"></script>
+<script src="js/common.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>

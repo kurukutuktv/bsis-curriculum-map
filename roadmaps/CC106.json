@@ -1,0 +1,538 @@
+{
+ "slug": "CC106",
+ "code": "CC106",
+ "title": "APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES",
+ "units": "3",
+ "prereq": "4th Year Standing",
+ "term": "2026-2027, First Semester",
+ "preparedBy": "MR. RANDY B. FAMILARA",
+ "description": "Development of applications using web, mobile, and emerging technologies with emphasis on requirements management, interface design, usability, testing, deployment, including ethical and legal considerations.",
+ "pilo": [
+  "Apply knowledge of business processes, computing, mathematics and social sciences appropriate to Information Systems.",
+  "Analyze a problem, identify and define the computing requirements with respect to organizational factors appropriate to its solution and plan strategies for their solution.",
+  "Evaluate information systems in terms of general quality attributes and possible trade-offs presented within the given requirement.",
+  "Design, implement, and evaluate information systems, processes, components, or programs and to source cost-benefit efficient alternatives to meet desired needs, goals and constraints.",
+  "Use knowledge and understanding of enterprises in modelling and design of information systems.",
+  "Deploy and use effectively skills, tools and techniques necessary for information systems practice."
+ ],
+ "cilo": [
+  "Develop specifications for a Progressive Web App (PWA) that precisely articulate its functional requirements, expected execution paths, and the explicit use of cutting edge or emerging web technologies, including hardware device capabilities and software library APIs.",
+  "Select and apply coding, documentation writing, and licensing standards in building a sufficiently complex PWA with service workers, caching, offline data, and a web app manifest, so that it is reliable, efficient, and robust, with respect to legal and ethical considerations.",
+  "Undertake, as part of a team activity, a source code inspection, unit testing, and debugging of the functional units of a sufficiently complex PWA, and deploy and maintain it."
+ ],
+ "items": [
+  {
+   "type": "week",
+   "id": "w1",
+   "label": "1",
+   "start": 1,
+   "end": 1,
+   "ilo": "Justify if the activities of the school are aligned to the VMGOs of the school",
+   "topics": [
+    "Vision, Mission, Goals, and Objectives of the City College of Calapan"
+   ],
+   "tla": {
+    "f2f": [
+     "Lectures with slides and visuals"
+    ],
+    "sync": [
+     "Lectures with slides and visuals. (via G-Meet)"
+    ],
+    "async": [
+     "Lectures/PowerPoint Presentation"
+    ]
+   },
+   "at": [
+    {
+     "text": "Individual Assessment: Identifying ones VMGO",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w2",
+   "label": "2",
+   "start": 2,
+   "end": 2,
+   "ilo": "Explain what a Progressive Web App (PWA) is, how it compares with a conventional website and a native app, and which software and hardware technologies it builds on.",
+   "topics": [
+    "Course Overview and Learning Pathway",
+    "Overview of Software and Hardware Technologies",
+    "What Is a Progressive Web App (PWA)",
+    "PWAs Compared with Websites and Native Apps",
+    "Getting Started: Upgrading an Existing Website or Moving from a Native App"
+   ],
+   "tla": {
+    "f2f": [
+     "Lecture and demonstration of installed PWAs compared with websites and native apps"
+    ],
+    "sync": [
+     "Open Forum on PWA Use Cases (via G-Meet)"
+    ],
+    "async": [
+     "Reading Materials: Learn PWA (G-Classroom)",
+     "Recorded Lecture (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Individual Assessment: PWA Comparison Matrix",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w3",
+   "label": "3",
+   "start": 3,
+   "end": 3,
+   "ilo": "Develop a specification for a PWA project that states its functional requirements, expected execution paths, and the emerging technologies, hardware devices, and software library APIs it will use.",
+   "topics": [
+    "Requirements Analysis and Modeling",
+    "Functional Requirements and Expected Execution Paths",
+    "Specifying Emerging Technologies: Hardware Devices and Software Library APIs",
+    "Checking Feature Support Before Choosing an API",
+    "Software Requirements Specification for the PWA Project"
+   ],
+   "tla": {
+    "f2f": [
+     "Guided workshop on writing the PWA requirements specification"
+    ],
+    "sync": [
+     "Specification Consultation (via G-Meet)",
+     "Peer Review of Specifications (via G-Meet)"
+    ],
+    "async": [
+     "Requirements Specification Draft (G-Classroom)",
+     "Feature-Support Research Activity (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Laboratory Exercise 1: Requirements and Feature-Support Analysis",
+     "mco": null
+    },
+    {
+     "text": "MCO1: Detailed Specifications of the PWA Project",
+     "mco": 1
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w4",
+   "label": "4",
+   "start": 4,
+   "end": 4,
+   "ilo": "Build a responsive, mobile-first interface using intrinsic design and basic web performance practices.",
+   "topics": [
+    "Foundations: Responsive Design",
+    "Mobile-First Design",
+    "Intrinsic Design",
+    "Web Performance Basics",
+    "Interface Design and Usability"
+   ],
+   "tla": {
+    "f2f": [
+     "Hands-on workshop on responsive and mobile-first layouts"
+    ],
+    "sync": [
+     "Layout Demonstration (via G-Meet)",
+     "Performance Troubleshooting Session (via G-Meet)"
+    ],
+    "async": [
+     "Responsive Layout Video Tutorial (G-Classroom)",
+     "Layout Practice Activity (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Laboratory Exercise 2: Responsive Mobile-First Layout",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w5-6",
+   "label": "5-6",
+   "start": 5,
+   "end": 6,
+   "ilo": "Design the screens, structure, and asset and data plan of an installable PWA that provides a standalone experience.",
+   "topics": [
+    "App Design: Designing for Installability",
+    "Designing a Standalone Experience Without Browser UI",
+    "Design Principles and Patterns",
+    "Choosing an Architecture: Single-Page vs. Multi-Page App",
+    "Assets and Data: Fast Loading Online and Availability Offline"
+   ],
+   "tla": {
+    "f2f": [
+     "Lecture and design workshop on app screens, standalone experience, and app architecture"
+    ],
+    "sync": [
+     "Design Critique Session (via G-Meet)",
+     "Architecture Discussion (via G-Meet)"
+    ],
+    "async": [
+     "Wireframe and App Structure Activity (G-Classroom)",
+     "Supplementary Readings (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Practical Assessment: App Design, Wireframes, and Architecture Plan",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "exam",
+   "id": "prelim",
+   "name": "Preliminary Examination",
+   "mode": "Pen & Paper: Objective & Subjective Type"
+  },
+  {
+   "type": "week",
+   "id": "w7-8",
+   "label": "7-8",
+   "start": 7,
+   "end": 8,
+   "ilo": "Implement a service worker that registers, installs, and activates correctly within its scope, following coding, documentation, and licensing standards.",
+   "topics": [
+    "Service Workers: Registration and Scope",
+    "Service Worker Lifecycle: Install, Activate, and Waiting",
+    "Service Worker Lifespan and Events",
+    "Service Worker Capabilities: Background Execution and Push Notifications",
+    "Coding, Documentation Writing, and Licensing Standards"
+   ],
+   "tla": {
+    "f2f": [
+     "Lecture and live coding on registering a service worker and handling its lifecycle"
+    ],
+    "sync": [
+     "Live Coding Session (via G-Meet)",
+     "Lifecycle Debugging Workshop (via G-Meet)"
+    ],
+    "async": [
+     "Service Worker Coding Drill (G-Classroom)",
+     "Recorded Demo (G-Classroom)",
+     "Coding Standards and Documentation Guide (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Laboratory Exercise 3: Service Worker Registration and Lifecycle",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w9",
+   "label": "9",
+   "start": 9,
+   "end": 9,
+   "ilo": "Apply the Cache Storage API and the fetch event to serve content with appropriate caching strategies so that the app loads quickly and works offline.",
+   "topics": [
+    "Caching: Storing, Updating, and Deleting Assets with the Cache Storage API",
+    "Serving: The fetch Event and respondWith()",
+    "Caching Strategies: Cache First, Network First, Stale While Revalidate, Network Only, and Cache Only",
+    "Custom Caching Strategies"
+   ],
+   "tla": {
+    "f2f": [
+     "Guided coding on caching and fetch handling with different caching strategies"
+    ],
+    "sync": [
+     "Code Review Session (via G-Meet)",
+     "Offline Testing Demonstration (via G-Meet)"
+    ],
+    "async": [
+     "Caching Strategies Exercises (G-Classroom)",
+     "Reading Materials (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Programming Exercise 1: Caching Strategies and Offline Fallback",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w10",
+   "label": "10",
+   "start": 10,
+   "end": 10,
+   "ilo": "Implement Workbox routing and caching and store application data offline using IndexedDB, with attention to reliability, efficiency, and robustness.",
+   "topics": [
+    "Workbox: Simplified Routing and Caching",
+    "Offline Data: Storage Management",
+    "IndexedDB and the Storage Manager",
+    "Reliability, Efficiency, and Robustness of Offline Features"
+   ],
+   "tla": {
+    "f2f": [
+     "Hands-on workshop on Workbox and IndexedDB"
+    ],
+    "sync": [
+     "Workbox Demonstration (via G-Meet)",
+     "Virtual Consultation (via G-Meet)"
+    ],
+    "async": [
+     "Workbox Routing Exercise (G-Classroom)",
+     "Offline Data Storage Activity (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Programming Exercise 2: Workbox Routing and IndexedDB Offline Data",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w11-12",
+   "label": "11-12",
+   "start": 11,
+   "end": 12,
+   "ilo": "Make the PWA installable by writing a web app manifest and customizing the installation experience.",
+   "topics": [
+    "Installation and Operating System Integration",
+    "Web App Manifest",
+    "Customizing the Installation Prompt",
+    "Enhancements: Splash Screens, App Shortcuts, and Sessions",
+    "Detecting Installation and Moving Users from the Browser to the Standalone App"
+   ],
+   "tla": {
+    "f2f": [
+     "Laboratory workshop on creating a web app manifest and the installation experience"
+    ],
+    "sync": [
+     "Installation Demonstration (via G-Meet)",
+     "Installability Troubleshooting Session (via G-Meet)"
+    ],
+    "async": [
+     "Manifest and Installability Activity (G-Classroom)",
+     "Video Tutorials (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Mini Project 1: Installable PWA with a Web App Manifest",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "exam",
+   "id": "midterm",
+   "name": "Midterm Examination",
+   "mode": "Output-based and Pen & Paper: Application Development and Objective & Subjective Type"
+  },
+  {
+   "type": "week",
+   "id": "w13-14",
+   "label": "13-14",
+   "start": 13,
+   "end": 14,
+   "ilo": "Integrate device, operating system, and emerging web capabilities into the PWA, with feature-support checks.",
+   "topics": [
+    "Capabilities: Hardware, Sensors, and Platform Features",
+    "OS Integration and Window Management",
+    "Experimental Features: Project Fugu and Origin Trials",
+    "Complexity Management: Threading and State Management"
+   ],
+   "tla": {
+    "f2f": [
+     "Lecture and demonstration of device and operating system capabilities"
+    ],
+    "sync": [
+     "Capability Demonstration (via G-Meet)",
+     "Open Forum on Emerging Web APIs (via G-Meet)"
+    ],
+    "async": [
+     "Capability Research and Feature-Support Report (G-Classroom)",
+     "Capability Coding Challenge (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Laboratory Exercise 4: Device and Operating System Capability Integration",
+     "mco": null
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w15-16",
+   "label": "15-16",
+   "start": 15,
+   "end": 16,
+   "ilo": "Test and debug the PWA using browser developer tools, emulators, and remote inspection, and carry out a team code inspection and unit testing of its functional units.",
+   "topics": [
+    "Tools and Debug: Simulators, Emulators, and Physical Devices",
+    "Remote Inspection and Port Forwarding",
+    "Chromium DevTools Application Panel: Service Workers, Storage, Manifest, and Background Services",
+    "Firefox and Safari Tools and Their Limits",
+    "Software Testing: Test Data, Unit Testing, and Regression Tests",
+    "Team Code Inspection and Documented Feedback"
+   ],
+   "tla": {
+    "f2f": [
+     "Laboratory workshop on debugging with browser tools, unit testing, and code inspection"
+    ],
+    "sync": [
+     "Code Inspection Session (via G-Meet)",
+     "Remote Debugging Demonstration (via G-Meet)"
+    ],
+    "async": [
+     "Test Case and Test Data Documentation (G-Classroom)",
+     "Debugging Activity (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Laboratory Exercise 5: Debugging with Browser Developer Tools",
+     "mco": null
+    },
+    {
+     "text": "MCO2: Test Data, Input Sequence, and Expected vs. Actual Results Document",
+     "mco": 2
+    },
+    {
+     "text": "MCO3: Documented Evaluation and Feedback on the Source Code",
+     "mco": 3
+    }
+   ]
+  },
+  {
+   "type": "week",
+   "id": "w17-18",
+   "label": "17-18",
+   "start": 17,
+   "end": 18,
+   "ilo": "Deploy and maintain the PWA, manage updates to its assets, service worker, and manifest, and present the final project with its documentation, test results, and legal and ethical considerations.",
+   "topics": [
+    "Deployment: Hosting, Domains, Origins, and PWA Scope",
+    "Hosting and HTTPS Requirements",
+    "Updating a Deployed PWA: Assets, Service Worker, and Metadata",
+    "Alerting Users: Notifications and Badging",
+    "Ethical and Legal Considerations",
+    "Project Documentation, Demonstration, and Presentation"
+   ],
+   "tla": {
+    "f2f": [
+     "Supervised project deployment, consultation, and presentation"
+    ],
+    "sync": [
+     "Deployment Consultation (via G-Meet)",
+     "Project Defense and Feedback Session (via G-Meet)"
+    ],
+    "async": [
+     "Project Documentation Submission (G-Classroom)",
+     "Project Progress Reports (G-Classroom)"
+    ]
+   },
+   "at": [
+    {
+     "text": "Final Project (Deployed PWA), Documentation, Demonstration, and Oral Presentation",
+     "mco": null
+    },
+    {
+     "text": "MCO4: Documented Evaluation of the PWA Project (Documentation, Regression Tests, and User Feedback)",
+     "mco": 4
+    }
+   ]
+  },
+  {
+   "type": "exam",
+   "id": "final",
+   "name": "Final Examination",
+   "mode": "Output-based: Project Development and Presentation"
+  }
+ ],
+ "grading": {
+  "components": [
+   {
+    "key": "standing",
+    "label": "Class Standing",
+    "pct": 40
+   },
+   {
+    "key": "prelim",
+    "label": "Preliminary Examination",
+    "pct": 20
+   },
+   {
+    "key": "midterm",
+    "label": "Midterm Examination",
+    "pct": 20
+   },
+   {
+    "key": "final",
+    "label": "Final Examination",
+    "pct": 20
+   }
+  ],
+  "breakdown": [
+   {
+    "label": "Input",
+    "detail": "Attendance, Quizzes, and Assignments",
+    "pct": 30
+   },
+   {
+    "label": "Process",
+    "detail": "Recitation and Class Participation",
+    "pct": 30
+   },
+   {
+    "label": "Outcomes",
+    "detail": "Laboratory Activities and Programming Exercises",
+    "pct": 40
+   }
+  ]
+ },
+ "readings": {
+  "basic": [
+   {
+    "heading": "Online Course",
+    "items": [
+     "web.dev. (n.d.). <i>Learn progressive web apps</i>. Google. https://web.dev/learn/pwa/"
+    ]
+   },
+   {
+    "heading": "Online Documentation",
+    "items": [
+     "Google. (n.d.-a). <i>Chrome DevTools</i>. Chrome for Developers. https://developer.chrome.com/docs/devtools",
+     "Google. (n.d.-b). <i>Workbox</i>. Chrome for Developers. https://developer.chrome.com/docs/workbox",
+     "MDN contributors. (n.d.-a). <i>IndexedDB API</i>. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API",
+     "MDN contributors. (n.d.-b). <i>Progressive web apps</i>. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps",
+     "MDN contributors. (n.d.-c). <i>Service Worker API</i>. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+    ]
+   }
+  ],
+  "extended": [
+   {
+    "heading": "",
+    "items": [
+     "Cáceres, M., Murphy, D., &amp; Liebel, C. (Eds.). (2026, November 6). <i>Web application manifest</i> [W3C Working Draft]. World Wide Web Consortium. https://www.w3.org/TR/appmanifest/",
+     "Chintala, M., &amp; Yanagisawa, Y. (Eds.). (2026, October 29). <i>Service workers</i> [W3C Candidate Recommendation Draft]. World Wide Web Consortium. https://www.w3.org/TR/service-workers/",
+     "Dornauer, B., &amp; Felderer, M. (2023). <i>Energy-saving strategies for mobile web apps and their measurement: Results from a decade of research</i> [Preprint]. arXiv. https://arxiv.org/abs/2304.01646",
+     "Renzulli, D. (2021, November 17). PWA. In <i>The Web Almanac 2021</i>. HTTP Archive. https://almanac.httparchive.org/en/2021/pwa",
+     "Roumeliotis, K. I., &amp; Tselikas, N. D. (2022). Evaluating progressive web app accessibility for people with disabilities. <i>Network</i>, <i>2</i>(2), 350–369. https://doi.org/10.3390/network2020022",
+     "Wargo, J. M. (2020). <i>Learning progressive web apps: Building modern web apps using service workers</i>. Addison-Wesley Professional."
+    ]
+   }
+  ]
+ },
+ "source": {
+  "file": "OBTL-CC106-PWA-2627-1st-sem.docx",
+  "extracted": "2026-11-08"
+ }
+}
