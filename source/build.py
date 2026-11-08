@@ -5,14 +5,14 @@ Regenerates the data files of the site from the sources.
     python3 build.py                 # uses ./roadmaps/*.json and ./curriculum_data.py
     python3 obtl_to_roadmap.py obtl/*.docx --out roadmaps && python3 build.py
 
-Writes into ../site/js :  data.js, roadmaps/manifest.js, roadmaps/<SLUG>.js
+Writes into ../js (the site at the repo root):  data.js, roadmaps/manifest.js, roadmaps/<SLUG>.js
 """
 import os, json, glob, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import curriculum_data as cd
 
-OUT = os.path.join(HERE, '..', 'site', 'js')
+OUT = os.path.join(HERE, '..', 'js')
 RM_OUT = os.path.join(OUT, 'roadmaps')
 os.makedirs(RM_OUT, exist_ok=True)
 
