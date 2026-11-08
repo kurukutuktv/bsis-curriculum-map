@@ -13,6 +13,7 @@
   --ink:#16181d;                        /* node borders / text on pastel nodes */
   --n-main:#ffe599; --n-sub:#fff8e1; --n-at:#e3eeff; --n-exam:#16181d; --n-exam-ink:#ffffff;
   --radius:8px;
+  --theme-room:118px;                   /* theme switch width + gap, kept free on the right of the sticky bars */
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
@@ -32,10 +33,14 @@ a{color:var(--accent)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- page header + top navigation ---------- */
-header.top{padding:22px 0 12px}
-.topnav{display:flex;gap:4px;align-items:center;margin:0 0 14px;font-size:14px}
-.topnav .theme{margin-left:auto}
-.seg.theme button{height:30px;padding:0 10px}
+header.top{padding:13px 0 12px}
+.topnav{display:flex;gap:4px;margin:0 0 14px;font-size:14px}
+
+/* ---------- theme switch: fixed at the top right, in line with the nav and the sticky bars ---------- */
+.themebar{position:fixed;top:13px;left:0;right:0;z-index:30;pointer-events:none}
+.themebar .wrap{display:flex;justify-content:flex-end}
+.seg.theme{pointer-events:auto;box-shadow:0 1px 3px rgba(10,12,18,.12)}
+.seg.theme button{height:30px;width:52px;padding:0}
 .topnav a{padding:5px 12px;border-radius:999px;text-decoration:none;color:var(--muted)}
 .topnav a:hover{color:var(--text);background:var(--surface)}
 .topnav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
@@ -100,5 +105,5 @@ aside.drawer.on{transform:none}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media (max-width:640px){ h1{font-size:22px} }
-@media print{.bar,.scrim,aside.drawer,.act,.toast{display:none!important}}
+@media print{.bar,.scrim,aside.drawer,.act,.toast,.themebar{display:none!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

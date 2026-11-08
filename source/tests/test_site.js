@@ -2,6 +2,10 @@ const { chromium } = require('playwright');
 const base = 'http://localhost:8765/';
 let fails = 0;
 function ok(c, m){ if(!c){ fails++; console.log('FAIL', m); } else console.log('ok  ', m); }
+const box = (pg, sel) => pg.locator(sel).first().boundingBox();
+async function overlaps(pg, a, c){ const A=await box(pg,a), C=await box(pg,c); return A.x<C.x+C.width && C.x<A.x+A.width && A.y<C.y+C.height && C.y<A.y+A.height; }
+// theme switch is at the top of the viewport and lines up with the right edge of the given bar
+async function pinnedTopRight(pg, barSel){ const s=await box(pg,'.seg.theme'), r=await box(pg,barSel); return s.y>=0 && s.y+s.height<=60 && Math.abs((s.x+s.width)-(r.x+r.width))<=1; }
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport:{width:1360,height:900}, deviceScaleFactor:1 });
@@ -17,6 +21,9 @@ function ok(c, m){ if(!c){ fails++; console.log('FAIL', m); } else console.log('
   ok(await p.locator('a.iconbtn.rm').count()===1, 'map: exactly one Roadmap button (CC106 is in the CMO map; IS Elec_1 is not)');
   ok(await p.locator('#rmcards .rmcard').count()===2, 'map: 2 roadmap cards');
   ok((await p.locator('#rmcards').innerText()).includes('elective'), 'map: HCI card labelled elective');
+  await p.evaluate(()=>window.scrollTo(0,1500));
+  ok(await pinnedTopRight(p,'.bar .row') && !(await overlaps(p,'.seg.theme','#fmtCode')) && !(await overlaps(p,'.seg.theme','#q')), 'map: theme switch stays top right after scrolling, bar controls not covered');
+  await p.evaluate(()=>window.scrollTo(0,0));
   await p.fill('#q','service worker');
   const rows = await p.locator('#tbody tr').allInnerTexts();
   ok(rows.length===1 && rows[0].includes('CC106') && rows[0].includes('Roadmap'), 'map: roadmap-topic search finds CC106 with Roadmap snippet: '+rows.map(r=>r.replace(/\s+/g,' ').slice(0,120)).join('|'));
@@ -44,6 +51,9 @@ function ok(c, m){ if(!c){ fails++; console.log('FAIL', m); } else console.log('
   await p.waitForSelector('#rows .row');
   const nWeeks = await p.locator('.row').count();
   ok(nWeeks===15, 'roadmap: 15 rows (12 week groups + 3 exams), got '+nWeeks);
+  await p.evaluate(()=>window.scrollTo(0,3000));
+  ok(await pinnedTopRight(p,'#toolbar') && !(await overlaps(p,'.seg.theme','#bReset')), 'roadmap: theme switch stays top right after scrolling, toolbar not covered');
+  await p.evaluate(()=>window.scrollTo(0,0));
   ok(await p.locator('.node.main').count()===12 && await p.locator('.node.exam').count()===3, 'roadmap: 12 week nodes + 3 exam nodes');
   const subs = await p.locator('.node.sub').count(), ats = await p.locator('.node.at').count();
   console.log('     sub nodes', subs, 'at nodes', ats);
@@ -108,6 +118,9 @@ function ok(c, m){ if(!c){ fails++; console.log('FAIL', m); } else console.log('
   await m.locator('.row').nth(2).scrollIntoViewIfNeeded(); await m.screenshot({path:'shots/roadmap-mobile-flow.png'});
   await m.goto(base+'index.html'); const sw2 = await m.evaluate(()=>document.documentElement.scrollWidth); ok(sw2<=392, 'mobile map: no page-level horizontal scroll ('+sw2+')');
   await m.screenshot({path:'shots/map-mobile.png'});
+  await m.evaluate(()=>window.scrollTo(0,1500));
+  ok(await pinnedTopRight(m,'.bar .row') && !(await overlaps(m,'.seg.theme','#q')), 'mobile map: theme switch stays top right, search not covered');
+  await m.screenshot({path:'shots/map-mobile-scrolled.png'});
 
   // theme: light / dark only, the OS colour scheme is ignored
   const dctx = await b.newContext({ viewport:{width:1360,height:900}, colorScheme:'dark' });

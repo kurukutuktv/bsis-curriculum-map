@@ -18,7 +18,7 @@
 .ring .cap{font-size:12px;color:var(--muted)}
 
 /* toolbar */
-.toolbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toolbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:10px var(--theme-room) 10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .rsearch{position:relative;flex:1 1 260px;max-width:420px}
 .rsearch input{width:100%;height:36px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--text);padding:0 12px 0 34px;font:inherit}
 .rsearch input:focus{outline:2px solid var(--accent);background:var(--bg)}
@@ -144,7 +144,7 @@
   .col,.col.l,.col.r{align-items:stretch;padding-left:16px}
   .col.l{order:2} .col.r{order:3} .row>.mainwrap{order:1}
   .node.sub,.node.at{max-width:none}
-  .toolbar{gap:8px;position:static;justify-content:flex-start}
+  .toolbar{gap:8px;position:static;justify-content:flex-start;padding-right:0}
   .toolbar .btn{height:34px;padding:0 10px;font-size:13px}
   .rsearch{flex-basis:100%;max-width:none}
   .rows{padding-right:5px}
